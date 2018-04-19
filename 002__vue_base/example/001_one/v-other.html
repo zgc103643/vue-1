@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>other</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>v-pre / v-cloak / v-once</h1>
+	<hr>
+	<div id="app">
+		<div>{{message}}</div>
+		<hr>
+		<!-- v-pre 原样输出,vue不对其进行编译 -->
+		<div v-pre>{{message}}</div>
+		<hr>
+		<!-- v-cloak 渲染完成后,才显示 -->
+		<div v-cloak>{{message}}</div>
+		<hr>
+		<!-- v-once 只渲染一次,只在第一次渲染时有用, -->
+		<div v-once>{{message}}</div>
+		<p>
+			<input type="text" v-model='message'>
+		</p>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			message:'v-pre / v-cloak / v-once'
+		}
+	});
+</script>
+</html>

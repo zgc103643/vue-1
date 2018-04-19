@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>009-tab切换</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			button{
+				width: 60px;
+				height: 60px;
+				font-size: 16px;
+				text-align: center;
+				line-height: 60px;
+				font-family: "微软雅黑";
+				border: none;
+				outline: none;
+				cursor: pointer;
+				margin-right: 20px;
+				margin-bottom: 20px;
+			}
+			.button_active{
+				background-color: #000000;
+				color: white;
+			}
+			.tab_div{
+				display: none;
+				width: 100px;
+				height: 100px;
+				background-color: #CCCCCC;
+				font-family: "微软雅黑";
+				font-size: 18px;
+				color: #000000;
+				text-align: center;
+				line-height: 100px;
+			}
+			.tab_div_active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<button v-for = "(item,index) in arr" :class = "{button_active:index == active_index}" @click = "changeIndex(index)">
+					{{index+1}}
+				</button>
+				<div class="tab_div" v-for = "(item,index) in arr" :class = "{tab_div_active:index == active_index}">
+					{{item}}
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				//定义数据类型
+				arr:['上单','ADC','中单'],
+				active_index:0
+			},
+			methods:{
+				changeIndex:function (index) {
+					this.active_index = index;
+				}
+			}
+		})
+	</script>
+</html>

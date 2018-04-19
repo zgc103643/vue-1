@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>005-数据监听</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				{{name}}
+			</div>
+			<div class="m-worp">
+				{{age}}
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				beginName:'旧',
+				newName:'名字',
+				name:'旧名字',
+				oldAge:'18',
+				newAge:'岁',
+				old:'18岁'
+			},
+			watch:{
+				//数据监听,可运用于初始化设置
+				beginName(newValue,oldValue){
+					this.name = newValue + this.newName
+				},
+				newName(newValue){
+					this.name = this.newName + this.beginName
+				}
+			},
+			computed:{
+				age(){
+					return this.oldAge + this.newAge
+				}
+			}
+		})
+	</script>
+</html>

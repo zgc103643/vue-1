@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>watch</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>watch 监听</h1>
+	<hr>
+	<div id="app">
+		<p>现在的温度: {{wendu}} </p>
+		<p>现在的季节: {{chuanyi}} </p>
+		<button v-on:click='addFun'>add</button>
+		<button v-on:click='reduceFun'>reduce</button>
+	</div>
+</body>
+<script type="text/javascript">
+	//此处是模拟从后台得到的数据
+	var chuanyiObj = ['春天','夏天','冬天'];
+
+	var app = new Vue({
+		el:'#app',
+		data:{
+			wendu:14,
+			chuanyi:'春天'
+		},
+		//监听 第一种
+		// watch:{
+		// 	wendu:function(newVal,oldVal){
+		// 		if(newVal >= 26){
+		// 			this.chuanyi = chuanyiObj[1];
+		// 		}else if(newVal <26 && newVal >0){
+		// 			this.chuanyi = chuanyiObj[0]
+		// 		}else{
+		// 			this.chuanyi = chuanyiObj[2]
+		// 		}
+		// 	}
+		// },
+		methods:{
+			addFun:function(){
+				this.wendu+=5;
+			},
+			reduceFun:function(){
+				this.wendu-=5;
+			}
+		}
+	});
+
+	//监听 第二种
+	//优势 降低我们程序的耦合度，使程序变的灵活。
+	app.$watch('wendu',function(newVal,oldVal){
+		if(newVal >= 26){
+			this.chuanyi = chuanyiObj[1];
+		}else if(newVal <26 && newVal >0){
+			this.chuanyi = chuanyiObj[0]
+		}else{
+			this.chuanyi = chuanyiObj[2]
+		}
+	});
+</script>
+</html>

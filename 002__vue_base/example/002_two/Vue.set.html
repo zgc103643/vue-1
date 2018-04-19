@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.set全局操作</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Vue.set全局操作</h1>
+	<hr>
+	<div id="app">
+		{{count}}
+		<ul>
+			<li v-for='item in arr'>{{item}}</li>
+		</ul>
+	</div>
+	<p>
+		<button onclick="addFun()">add</button>
+	</p>
+</body>
+<script type="text/javascript">
+	function addFun() {
+		//法一 优势
+		//Vue.set(outData,'count',2);
+		//法二 对象的思想
+		//app.count++;
+		//法三 原生的方法
+		//outData.count++;
+		
+		//只能通过此方法监听数组的下标和长度
+		Vue.set(app.arr,1,'ccc');
+	}
+	var outData = {
+		count:'1',
+		goods:'car',
+		arr:['aaa','bbb','ccc']
+	}
+
+	var app = new Vue({
+		el:'#app',
+		data:outData
+	});
+</script>
+</html>

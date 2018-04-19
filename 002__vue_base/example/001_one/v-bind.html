@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+		.classA{
+			color: red;
+		}
+		.classB{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>v-bind</h1>
+	<hr>
+	<div id="app">
+		<p>
+			<img v-bind:src="imgSrc" width="220px" height="150px" alt="">
+		</p>
+		<p>
+			<a :href="webUrl" target="_blank">jsCyl</a>
+		</p>
+		<hr>
+		<!-- 常用于区别在不同的条件下使用不同的class -->
+		<div :class = 'className'>
+			<span>1.绑定class</span>
+		</div>
+		<div :class = '{classA:isOk}'>
+			<span>2.绑定class中的判断</span>
+		</div>
+		<div :class = '[classA,classB]'>
+			<span>3.绑定class中的数组</span>
+		</div>
+		<div :class = 'isOk?classA:classB'>
+			<!-- 当 isOk == true 时,添加 classA
+				 当 isOk == false 时,添加 classB -->
+			<span>4.绑定class中的三元运算符</span>
+		</div>
+		<!-- 法一 -->
+		<button v-on:click = 'changeClass'>切换绑定的class</button>
+		<!-- 法二 -->
+		<!-- 这两种方法均可以通过改变 isOK 的 true/false 来改变 class 名 -->
+		<input type="checkbox" id="isOk" v-model = 'isOk'>
+		<label for="isOk">isOk = {{isOk}}</label>
+		<hr>
+		<div :style="{color:red,fontSize:font}">5.绑定行内样式</div>
+		<hr>
+		<div :style="styleObject">6.绑定行内样式-对象</div>
+
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			imgSrc:'http://jspang.com/wp-content/uploads/2018/01/VUE-timeline.jpg',
+			webUrl:'https://blog.csdn.net/jscyl',
+			className:'classA',
+			isOk:false,
+			classA:'classA',
+			classB:'classB',
+			red:'red',
+			font:'20px',
+			styleObject:{
+				color:'green',
+				fontSize:'20px'
+			}
+		},
+		methods:{
+			changeClass:function() {
+				this.isOk = !this.isOk;
+			}
+		}
+	});
+</script>
+</html>

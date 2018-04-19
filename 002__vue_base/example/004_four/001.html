@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实例属性</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../assets/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>实例属性 Vue和Jquery.js一起使用</h1>
+	<hr>
+	<div id="app">
+
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+
+		},
+		mounted:function () {
+			//在此处调用JQuery
+        },
+		methods:{
+			addFun:function () {
+				console.log('调用此方法');
+            }
+		}
+	});
+
+	app.addFun();
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-text / v-html</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>v-text / v-html</h1>
+	<hr>
+	<div id="app">
+		<!-- v-text    的优势,可以更优雅的展示页面
+		{{ xxx }} 这种写法,当遇到网速比较慢的情况时,会先显示{{}},然后再显示所渲染的内容 -->
+		<span v-text = 'textObj'></span>
+		<!-- 但是 v-html 安全性很低,尤其是表单提交类,所以一般不用 -->
+		<span v-html = 'htmlObj'></span>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			textObj:'hello world',
+			htmlObj:'<h2>hello world</h2>'
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mixins 混入选项操作</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Mixins 混入选项操作</h1>
+	<hr>
+	<div id="app">
+		<p>{{num}}</p>
+		<button v-on:click='addFun'>add</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var addUpload = {
+		// 混入 mixins
+		// 它不污染其他的功能,用于与项目的后期功能上的添加或更改
+		// 需要注意的是,当采用 混入 的方式时,需要将其放到 methods 之后
+		updated:function() {
+			console.log('混入 : 当数据发生变化时,这里也实时更新,常用于监听数据的变更,当监听对象的数据改变时,其他的一些数据也随之改变');
+		}
+	};
+
+	Vue.mixin({
+		//一般而言,如果某个功能是公用的,我们就采用这种全局的方式引用
+		updated:function(){
+			console.log('我是全局混入的,我是最先执行的');
+		}
+	});
+
+	var app = new Vue({
+		el:'#app',
+		data:{
+			num:1
+		},
+		methods:{
+			addFun:function(){
+				this.num++;
+			}
+		},
+		updated:function(){
+			console.log('我是原生的钩子函数,我的执行顺序是在 vue 之后,即 先执行 appUpload ,再执行本钩子函数');
+		},
+		mixins:[addUpload]
+	});
+</script>
+</html>

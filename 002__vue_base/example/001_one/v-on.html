@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>v-on</h1>
+	<hr>
+	<div id="app">
+		<button v-on:click = 'addFun'>+</button>
+		<!--简写,当不绑定事件,可以简写成@click -->
+		<button @click = 'reduceFun'>-</button>
+		<p v-text = 'number'></p>
+		<hr>
+		<!-- 法一 此处绑定的是回车键的键盘事件-->
+		<!-- <input type="text" v-on:keyUp.enter = 'enterFun' v-model = 'number2'> -->
+		<!-- 法二 此处的 enter 可以替换成键盘所对应的数字-->
+		<input type="text" v-on:keyUp.13 = 'enterFun' v-model = 'number2'>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			number:0,
+			number2:0
+		},
+		methods:{
+			addFun:function() {
+				this.number++;
+			},
+			reduceFun:function() {
+				this.number--;
+			},
+			enterFun:function() {
+				//当回车键确认后,显示的数值 = 旧数值 + input输入框中的数值
+				this.number = this.number + parseInt(this.number2);
+			}
+		}
+	});
+</script>
+</html>

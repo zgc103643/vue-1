@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>v-model</h1>
+	<hr>
+	<div id="app">
+		<div>
+			<p>model :  即时更改</p>
+			<input type="text" v-model = 'model'>
+		</div>
+		<div>
+			<p>model.lazy :  当鼠标离开输入框的时候改变</p>
+			<input type="text" v-model.lazy = 'lazy'>
+		</div>
+		<div>
+			<p>model.number :  输入框的内容只能是数字,如果是字符串,message不改变;但是如果number默认值是字符串,那么这个.number就没有用了</p>
+			<input type="text" v-model.number = 'number'>
+		</div>
+		<div>
+			<p>model.trim : 去除空格</p>
+			<input type="text" v-model.trim = 'trim'>
+		</div>
+		<p>原始的信息 : {{model}} {{lazy}}  {{number}} {{trim}}</p>
+		<hr>
+		<h3>文本域</h3>
+		<textarea cols="30" rows="10" v-model = 'textarea'></textarea>
+		<h3>多选框绑定一个值</h3>
+		<input type="checkbox" name="" id="isTrue" v-model = 'isTrue'>
+		<label for="isTrue">{{isTrue}}</label>
+		<hr>
+		<h3>多选框插入数组</h3>
+		<p>
+			<input type="checkbox" value="isCyl" id="isCyl" v-model = 'web'>
+			<label for="isTrue">isCyl</label>
+			<input type="checkbox" value="islj" id="islj" v-model = 'web'>
+			<label for="isTrue">islj</label>
+		</p>
+		<p>{{web}}</p>
+		<hr>
+		<h3>单选框绑定事件</h3>
+		<p>
+			<input type="radio" id="one" value="男" v-model = 'sex'>
+			<!-- 此处的label只是为了标记radio,无其他作用 -->
+			<label for="one">男</label>
+			<input type="radio" id="two" value="女" v-model = 'sex'>
+			<label for="two">女</label>
+			<p>性别  :  {{sex}}</p>
+		</p>
+	</div>
+</body>>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			model:'v-model',
+			lazy:'v-lazy',
+			number:'1111',
+			trim:'A B',
+			textarea:'v-textarea',
+			isTrue:true,
+			web:[],
+			sex:'男'
+		}
+	});
+</script>
+</html>

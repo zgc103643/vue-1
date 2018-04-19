@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>010-简易留言板</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			._div{
+				overflow: hidden;
+				margin-bottom: 20px;
+				width: calc(100% - 20px);
+			}
+			._left{
+				float: left;
+				width: 130px;
+				text-align: left;
+				font-family: "微软雅黑";
+				font-size: 14px;
+				height: 42px;
+				line-height: 42px;
+			}
+			._right{
+				float: left;
+				margin-left: 15px;
+			}
+			._input{
+				width: 400px;
+				height: 40px;
+				outline: none;
+				border: 1px solid #CCCCCC;
+				padding-left: 10px;
+			}
+			button{
+				width: 40px;
+				height: 40px;
+				font-family: "微软雅黑";
+				font-size: 13px;
+				background-color: #000000;
+				color: white;
+				border: none;
+				text-align: center;
+				line-height: 40px;
+				cursor: pointer;
+				outline: none;	
+			}
+			ul{
+				list-style-type: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<div class="_div">
+					<div class="_left">请输入您的用户名</div>
+					<div class="_right">
+						<input type="text" class="_input" v-model = "user"/>
+					</div>
+				</div>
+				<div class="_div">
+					<div class="_left">请输入您的留言</div>
+					<div class="_right">
+						<input type="text" class="_input" v-model = "message"/>
+					</div>
+				</div>
+				<div class="_div">
+					<button @click = "submitFun">提交</button>
+				</div>
+				<ul>
+					<li v-for = '(item,index) in arr'>
+						<p>用户名&nbsp;:&nbsp;{{item.user}}</p>
+						<p>留言&nbsp;:&nbsp;{{item.message}}</p>
+						<button @click = "deleteFun(index)">删除</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				user:'',
+				message:'',
+				arr:[]
+			},
+			methods:{
+				submitFun:function () {
+					console.log("user:" + this.user + " message: " + this.message)
+					var obj = {
+						user:this.user,
+						message:this.message
+					}
+					this.arr.push(obj)
+				},
+				deleteFun:function (index) {
+					this.arr.splice(index,1)
+				}
+			}
+		})
+	</script>
+</html>

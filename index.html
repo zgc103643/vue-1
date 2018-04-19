@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-cli</title>
+</head>
+<body>
+    <h2>配置环境</h2>
+    <ol>
+        <li>npm -v 查看npm是否安装,如未安装,前往百度自行安装,并同时安装淘宝镜像cnpm</li>
+        <li>vue -V 查看本机是否已安装vue-cli,如未安装 cnpm install vue-cli -g 全局安装vue-cli</li>
+        <li>vue init webpack vuecliTest 初始化开始建立vue项目,一路回车即可</li>
+        <li>注意:</li>
+        <li>因为vue初始化建立的项目有很严谨的eslint规则,建议在初始化时 Use ESLint to lint your code? (Y/n) 这一步选no 这样在编译保存的时候就不会再发生因为 eslint规则 而弹出各种的警告了</li>
+        <li>进入到你创建的项目的根目录下,打开终端</li>
+        <li>cnpm install 安装 package.json 中的所有依赖包</li>
+        <li>cnpm run dev 启动项目 http://localhost:8080</li>
+        <hr>
+        <li>项目目录的说明</li>
+        <li>
+            |-- build                            // 项目构建(webpack)相关代码
+            |   |-- build.js                     // 生产环境构建代码
+            |   |-- check-version.js             // 检查node、npm等版本
+            |   |-- dev-client.js                // 热重载相关
+            |   |-- dev-server.js                // 构建本地服务器
+            |   |-- utils.js                     // 构建工具相关
+            |   |-- webpack.base.conf.js         // webpack基础配置
+            |   |-- webpack.dev.conf.js          // webpack开发环境配置
+            |   |-- webpack.prod.conf.js         // webpack生产环境配置
+            |-- config                           // 项目开发环境配置
+            |   |-- dev.env.js                   // 开发环境变量
+            |   |-- index.js                     // 项目一些配置变量
+            |   |-- prod.env.js                  // 生产环境变量
+            |   |-- test.env.js                  // 测试环境变量
+            |-- src                              // 源码目录
+            |   |-- components                     // vue公共组件
+            |   |-- store                          // vuex的状态管理
+            |   |-- App.vue                        // 页面入口文件
+            |   |-- main.js                        // 程序入口文件，加载各种公共组件
+            |-- static                           // 静态文件，比如一些图片，json数据等
+            |   |-- data                           // 群聊分析得到的数据用于数据可视化
+            |-- .babelrc                         // ES6语法编译配置
+            |-- .editorconfig                    // 定义代码格式
+            |-- .gitignore                       // git上传需要忽略的文件格式
+            |-- README.md                        // 项目说明
+            |-- favicon.ico
+            |-- index.html                       // 入口页面
+            |-- package.json                     // 项目基本信息
+        </li>
+        <hr>
+        <li>cnpm run build 项目发布第一步 会在根目录下生成dist文件夹,这个 dist 文件夹下会包括1个index.html和一个static文件夹,这个dist文件夹就是我们需要上传到服务器上的文件</li>
+
+    </ol>
+</body>
+</html>

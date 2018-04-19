@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extends Option  扩展选项</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Extends Option  扩展选项</h1>
+	<hr>
+	<div id="app">
+		<p>{{num}}</p>
+		<button v-on:click='addFun'>add</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var extendsObj = {
+		updated:function(){
+			console.log('我是扩展的updated');
+		},
+		methods:{
+			//注意:
+			//1.一个单页只能有一个扩展
+			//2.在扩展中写方法,名字不可与原生的重复,如果重复,程序只会执行原生的
+			addFun:function(){
+				console.log('我是扩展出来的方法');
+			}
+		}
+	};
+
+	var app = new Vue({
+		el:'#app',
+		data:{
+			num:1
+		},
+		methods:{
+			addFun:function(){
+				console.log('我是原生的方法');
+				this.num++;
+			}
+		},
+		updated:function(){
+			console.log('我是原生的updated');
+		},
+		extends:extendsObj
+	});
+</script>
+</html>

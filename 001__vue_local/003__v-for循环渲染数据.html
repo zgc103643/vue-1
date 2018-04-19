@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>003-v-for渲染数据</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<ul>
+					<!--在实际应用中,将data中的lis替换成后台提供的字段,然后将其改为lis:'',然后在ajax中给lis赋值,即可获取数据-->
+					<li v-for="item in lis">{{item.obj}}</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				lis:[
+					{obj:'001'},
+					{obj:'002'},
+					{obj:'003'}
+				]
+			},
+			created(){
+				//在此处定义的方法,在页面加载完毕后可直接运行
+				this.getData()
+			},
+			methods:{
+				getData(){
+//					this.$http.get('/wap_home/account/footprint').then(response=>{
+//						let res = response.body
+//						if(res.status == 1){
+//							this.list =res.data						
+//						}else{
+//							
+//						}
+//					},response=>{})
+				}
+			}
+		})
+	</script>
+</html>

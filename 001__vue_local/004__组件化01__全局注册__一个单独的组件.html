@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>004-组件化</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<ul>
+					<lis></lis>
+				</ul>
+			</div>
+			<div class="m-worp">
+				<ul>
+					<change v-for = 'item in arr' key='*this' v-bind:comment = 'item'></change>
+				</ul>
+			</div>
+			<div class="m-worp">
+				<ul>
+					<indexs v-for = '(item,index) in arrays' key='*this' v-bind:comment = 'item' v-bind:typeindex = 'index'></indexs>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		Vue.component('lis',{
+			template:'<li>通过外部引入的方式加载vue下的组件化</li>'
+		})
+		Vue.component('change',{
+			template:'<li>{{comment}}</li>',
+			props:['comment']
+		})
+		Vue.component('indexs',{
+			template:'<li>下标为{{typeindex}}的内容为:{{comment}}</li>',
+			props:['comment','typeindex']
+		})
+		new Vue({
+			el:'#app',
+			data:{
+				arr:['001','002','003'],
+				arrays:['004','005','006']
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>computed Option  计算选项</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>computed Option  计算选项</h1>
+	<hr>
+	<h3>computed 的作用主要是对原数据进行改造输出。改造输出：包括格式的编辑，大小写转换，顺序重排，添加符号......。</h3>
+	<div id="app">
+		<p>{{newPrice}}</p>
+		<ul>
+			<li v-for = 'item in reversNews'>{{item.title}} : {{item.data}}</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	//模拟从后台接收的json数据
+	var newsListObj = [
+		{title:'测试001',data:'2018/04/09'},
+		{title:'测试002',data:'2018/04/10'},
+		{title:'测试003',data:'2018/04/11'},
+		{title:'测试004',data:'2018/04/12'}
+	]; 
+	var app = new Vue({
+		el:'#app',
+		data:{
+			price:100,
+			newsList:newsListObj
+		},
+		computed:{
+			newPrice:function() {
+				return this.price = this.price + '元'
+			},
+			reversNews:function() {
+				//js原生 翻转数组
+				return this.newsList.reverse();
+			}
+		}
+	});
+</script>
+</html>

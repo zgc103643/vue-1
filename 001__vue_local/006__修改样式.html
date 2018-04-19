@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>006-修改样式</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.active{
+				color: red;
+			}
+			.font{
+				font-size: 30px;
+			}
+			.fontWeight{
+				font-weight: bold;
+			}
+			.color{
+				color: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<div v-bind:class="{active:isActive,font:isFont}">条件渲染</div>
+			</div>
+			<div class="m-worp">
+				<div v-bind:class="className">条件渲染</div>
+			</div>
+			<div class="m-worp">
+				<div v-bind:style="{color:activeColor,'font-size':font + 'px'}">改变内联样式</div>
+			</div>
+			<div class="m-worp">
+				<div v-bind:style="styleArr">改变内联样式</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				isActive:true,
+				isFont:false,
+				className:['fontWeight','color'],
+				activeColor:'blue',
+				font:70,
+				styleArr:{
+					color:'orange',
+					'font-size':50
+				}
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+</html>

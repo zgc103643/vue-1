@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>004-组件化</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<child></child>
+			</div>
+			<div class="m-worp">
+				<childs></childs>
+			</div>
+			<div class="m-worp">
+				<btns></btns>
+				<btns></btns>
+				<btns></btns>
+				<btns></btns>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				//定义数据类型
+			},
+			components:{
+				'child':{
+					template:"<div>子组件<inner></inner></div>",
+					components:{
+						'inner':{
+							template:"<div>孙组件</div>"
+						}
+					}
+				},
+				'childs':{
+					data:function(){
+						return{
+							msg:'data内容'
+						}
+					},
+					template:"<div>{{msg}}</div>"
+				},
+				'btns':{
+					data:function(){
+						return{
+							count:0
+						}
+					},
+					template:"<div><input type='button' @click='up' v-model='count'></div>",
+					methods:{
+						up(){
+							this.count++
+						}
+					}
+				}
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+</html>

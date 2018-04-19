@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>002-vue常用指令</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.fa-enter-active,.fa-leave-active{
+				transition: all 5s;
+			}
+			.fa-enter,.fa-leave-active{
+				-webkit-transform: translate(-200px,0);
+				-moz-transform: translate(-200px,0);
+				-ms-transform: translate(-200px,0);
+				-o-transform: translate(-200px,0);
+				transform: translate(-200px,0);
+			}
+			input{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<span v-if="showObj == true">显示/隐藏</span>
+				<button v-on:click="fadeInOut">显示/隐藏</button>
+			</div>
+			<div class="m-worp">
+				<transition name='fa'>
+					<span v-if="animateObj == true">显示/隐藏</span>
+				</transition>
+				<button v-on:click="animateFun">transition标签 和 其 name值 搭配添加动画效果</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				showObj:true,
+				animateObj:false
+			},
+			methods:{
+				fadeInOut(){
+					this.showObj = !this.showObj
+				},
+				animateFun(){
+					this.animateObj = !this.animateObj
+				}
+			}
+			
+		})
+	</script>
+</html>

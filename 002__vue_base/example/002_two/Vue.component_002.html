@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.component 组件 props 属性设置</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Vue.component 组件 props 属性设置</h1>
+	<hr>
+	<div id="app">
+		<panda here='China'></panda>
+		<hea from-here='header'></hea>
+		<cyl :here='message'></cyl>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			message:'在此处接收后台的数据'
+		},
+		components:{
+			'panda':{
+				//填充内容
+				template:'<h3>熊猫来自 {{here}}</h3>',
+				//挂载到元素上
+				props:['here']
+			},
+			'hea':{
+				template:'<h3>如果属性是用-连接起来的,在这里需要用驼峰法获取属性名 {{fromHere}} ,因为vue不识别 - </h3>',
+				props:['fromHere']
+			},
+			'cyl':{
+				template:'<h3>在组件中传递参数 {{here}}</h3>',
+				props:['here']
+			}
+		}
+	});
+</script>
+</html>

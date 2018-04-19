@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.component 组件</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Vue.component 组件</h1>
+	<hr>
+	<div id="app">
+        <!-- 一个html文件中只能定义一个全局组件,但可以定义多个局部组件 -->
+		<jscyl></jscyl>
+        <panda></panda>
+	</div>
+</body>
+<script type="text/javascript">
+    Vue.component('jscyl',{
+        template:`<h3>我是全局的jscyl组件</h3>`
+    });
+
+	var app = new Vue({
+		el:'#app',
+        components:{
+            'panda':{
+                template:`<h3>我是局部的panda组件</h3>`
+            }
+        }
+	});
+</script>
+</html>

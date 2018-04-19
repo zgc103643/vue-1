@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>007-v-if条件渲染</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<!--在实际应用中,num在data中定义为空,即: num:'',然后再ajax中找到它所对应的字段,该字段由后台提供-->
+				<div v-if="num">a</div>
+				<div v-else>b</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				num:true
+			},
+			methods:{
+				
+			}
+			
+		})
+	</script>
+</html>

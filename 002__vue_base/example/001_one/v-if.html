@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-if / v-else / v-show</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>v-if / v-else / v-show</h1>
+	<hr>
+	<div id="app">
+		<!-- v-if 判断是否加载,即此div是否存在 -->
+		<!-- 可以减轻服务器的压力,按需加载 -->
+		<div v-if='isLogin == true'>你好,jscyl</div>
+		<div v-else>请登录</div>
+		<!-- v-show 判断是否显示,但是依旧加载 -->
+		<!-- 只是更改display的属性,操作方便 -->
+		<div v-show='isLogin == true'>v-show</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			isLogin:true
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>004-组件化</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				btn按钮的和:{{btnSum}}
+				<btns v-on:increment = 'incrementTotal'></btns>
+				<btns v-on:increment = 'incrementTotal'></btns>
+				<btns v-on:increment = 'incrementTotal'></btns>
+				<btns></btns>
+			</div>
+			<div class="m-worp">
+				<input type="text" v-model="newTodoText" @keydown.enter="addTodo"/>
+				<ul></ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				btnSum:0,
+				todos:[],
+				newTodoText:''
+			},
+			components:{
+				'btns':{
+					data:function(){
+						return{
+							count:0
+						}
+					},
+					template:"<div><input type='button' @click='up' v-model='count'></div>",
+					methods:{
+						up(){
+							this.count++;
+							this.$emit("increment")
+						}
+					}
+				}
+			},
+			methods:{
+				incrementTotal(){
+					this.btnSum++
+				},
+				addTodo(){
+					console.log("按到回车键了" + '  输入框的内容:' + this.newTodoText)
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>009-tab切换</title>
+		<script src="public/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-worp{
+				padding: 20px;
+				border-bottom: 1px solid #D8D8D8;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			button{
+				width: 60px;
+				height: 60px;
+				font-size: 16px;
+				text-align: center;
+				line-height: 60px;
+				font-family: "微软雅黑";
+				border: none;
+				outline: none;
+				cursor: pointer;
+				margin-right: 20px;
+				margin-bottom: 20px;
+			}
+			.button_active{
+				background-color: #000000;
+				color: white;
+			}
+			.tab_div{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background-color: #CCCCCC;
+				font-family: "微软雅黑";
+				font-size: 18px;
+				color: #000000;
+				text-align: center;
+				line-height: 100px;
+			}
+			.show_div{
+				width: 100px;
+				overflow: hidden;
+			}
+			.move_div{
+				overflow: hidden;
+				width: 300px;
+				transition: margin-left 1s;
+				-moz-transition: margin-left 1s; /* Firefox 4 */
+				-webkit-transition: margin-left 1s; /* Safari 和 Chrome */
+				-o-transition: margin-left 1s; /* Opera */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="m-worp">
+				<div>
+					<button v-for = "(item,index) in arr" :class = "{button_active:index == active_index}" @click = "changeIndex(index)">
+						{{index+1}}
+					</button>
+				</div>
+				<div class="show_div">
+					<div class="move_div">
+						<div class="tab_div" v-for = "(item,index) in arr">
+							{{item}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				arr:['A','B','C'],
+				active_index:0
+			},
+			methods:{
+				changeIndex:function (index) {
+					console.log('this_index: ' + index)
+					var move_div = document.querySelector('.move_div');
+					if (index == 0) {
+						move_div.style.marginLeft = "0px"
+					}
+					if (index == 1) {
+						move_div.style.marginLeft = "-100px"
+					}
+					if (index == 2) {
+						move_div.style.marginLeft = "-200px"
+					}
+					this.active_index = index;
+				}
+			}
+		})
+	</script>
+</html>

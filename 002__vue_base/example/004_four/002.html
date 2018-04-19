@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<h1>slot</h1>
+<hr>
+<div id="app">
+    <h1>slot在自定义组件时传递给组件内容，组件接收内容并输出</h1>
+    <jscyl>
+        <span slot="bolgUrl">{{jscylData.bolgUrl}}</span>
+        <span slot="netName">{{jscylData.netName}}</span>
+        <span slot="skill">{{jscylData.skill}}</span>
+    </jscyl>
+</div>
+
+<template id="tep">
+    <!--采用此方法写模板时,必须用一个大的div包括起来所有内容-->
+    <div>
+        <p>博客地址 : <slot name="bolgUrl"></slot></p>
+        <p>网名 : <slot name="netName"></slot></p>
+        <p>技术类型 : <slot name="skill"></slot></p>
+    </div>
+</template>
+
+</body>
+<script type="text/javascript">
+    //定义组件
+    var templateObj = {
+        template:'#tep'
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            jscylData:{
+                bolgUrl:'http://www.oujuhui.com',
+                netName:'jscyl',
+                skill:'web前端'
+            }
+        },
+        components:{
+            //引用组件
+            'jscyl':templateObj
+        },
+        methods:{
+
+        }
+    });
+</script>
+</html>

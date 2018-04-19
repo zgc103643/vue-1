@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.extend扩展实例构造器</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>Vue.extend扩展实例构造器</h1>
+	<hr>
+	<div id="author"></div>
+</body>
+<script type="text/javascript">
+	//填充实例
+	var authorUrl = Vue.extend({
+		template:'<p><a :href="authorUrl" target="_black">{{authorName}}</a></p>',
+		data:function() {
+			return {
+				authorName:'jscyl',
+				authorUrl:'http://www.baidu.com'
+			}
+		}
+	});
+	//绑定元素,调用实例
+	new authorUrl().$mount('#author');
+
+</script>
+</html>

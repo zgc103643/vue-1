@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>template 制作模板</title>
+    <script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>template 制作模板</h1>
+	<hr>
+	<div id="app">
+		{{count}}
+	</div>
+    <template id="dd2">
+        <div>
+            <h6>第二种:这种标签内的模板适合大篇的html</h6>
+            <h2 style = 'color:orange'>我是teplate标签模板</h2>
+        </div>
+    </template>
+    <script type='x-template' id='dd3'>
+        <div>
+            <h6>第三种:假如说模板的内容有很多很多,此时我们可以进行外部引入,添加src的方式</h6>
+            <h2 style = 'color:orange'>script标签模板</h2>
+        </div>
+    </script>
+</body>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			count:1
+		},
+        //template:'#dd2'
+        template:'#dd3'
+		// template:`
+  //           <h2 style = 'color:red'>第一种:我是选项模板</h2>
+  //       `
+	});
+</script>
+</html>

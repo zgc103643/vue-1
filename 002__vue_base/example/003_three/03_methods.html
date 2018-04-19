@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>methods Option  方法选项</title>
+	<script src="../../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<h1>methods Option  方法选项</h1>
+	<hr>
+	<div id="app">
+		<p>{{num}}</p>
+		<button v-on:click='addFun(2)'>Add</button>
+		<button v-on:click='addFun2($event)'>Add</button>
+		<p>
+			<!--如果我们需要经常调用构造器中的某个方法,我们在自定义组件时,此时需要给自定义组件添加 .native 方可调用-->
+			<btn v-on:click.native='addFun(3)'></btn>
+		</p>
+	</div>
+</body>
+<script type="text/javascript">
+	//自定义组件
+	var assembly_btn = {
+		template:`<button>组件btn</button>`
+	}
+
+	var app = new Vue({
+		el:'#app',
+		data:{
+			num:0
+		},
+		components:{
+			btn:assembly_btn
+		},
+		methods:{
+			addFun:function(params_num) {
+				//methods中参数的传递
+				if (params_num != '') {
+					this.num+=params_num
+				} else {
+					this.num++;
+				}
+			},
+			addFun2:function($event) {
+				//methods中的$event参数
+				//传递的$event参数都是关于你点击鼠标的一些事件和属性
+				console.log($event);
+			}
+		}
+	});
+</script>
+</html>
