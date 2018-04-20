@@ -14,7 +14,7 @@
 				3.cnpm install --save-dev node-sass
 			</li>
 			<li class="item">
-				4.找到 webpack.base.conf.js 文件 中的 rules 数组
+				4.找到build / webpack.base.conf.js 文件 中的 rules 数组
 			</li>
 			<li class="item">
 				5.在其中第二个对象元素后添加配置 
