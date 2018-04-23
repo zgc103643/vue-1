@@ -6,6 +6,7 @@ import Top from '@/components/Page/Top'
 import Jquery from '@/components/Page/Jquery'
 import Sass from '@/components/Page/Sass'
 import ElementUI from '@/components/Page/ElementUI'
+import Axios from '@/components/Page/Axios'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
     			path:'ElementUI',
     			name:'ElementUI',
     			component:ElementUI
+    		},
+    		{
+    			path:'Axios',
+    			name:'Axios',
+    			component:Axios
     		}
     	]
     }

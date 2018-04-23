@@ -9,7 +9,10 @@
 				<li class="item">Sass</li>
 			</router-link>
 			<router-link to='/Page/ElementUI' class='vue_a'>
-				<li class="item">element-ui</li>
+				<li class="item">Element-ui</li>
+			</router-link>
+			<router-link to='/Page/Axios' class='vue_a'>
+				<li class="item">Axios</li>
 			</router-link>
 		</ul>
 	</div>
