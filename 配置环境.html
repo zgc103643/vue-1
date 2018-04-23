@@ -58,35 +58,35 @@
     		3.cnpm install --save-dev node-sass
     		4.找到build / webpack.base.conf.js 文件 中的 rules 数组
     		5.在其中第二个对象元素后添加配置 
-				{
-				  test: /\.sass$/,
-				  loaders: ['style', 'css', 'sass']
-				}
-			6.cnpm install element-ui --save
-			7.打开 src/main.js 引入 element 插件
-			8.将下面的代码拷贝至 main.js 中
-					<!--// The Vue build version to load with the `import` command
-					// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-					import Vue from 'vue'
-					import App from './App'
-					import router from './router'
-					import ElementUI from 'element-ui' 
-					import 'element-ui/lib/theme-chalk/index.css';
-					
-					Vue.config.productionTip = false
-					
-					Vue.use(ElementUI);
-					
-					/* eslint-disable no-new */
-					new Vue({
-					  el: '#app',
-					  router,
-					  components: { App },
-					  template: '<App/>'
-					})-->
-			9.cnpm install axios --save
-			10.在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios'
-			11. cnpm run dev 启动项目
+			{
+			  test: /\.sass$/,
+			  loaders: ['style', 'css', 'sass']
+			}
+		6.cnpm install element-ui --save
+		7.打开 src/main.js 引入 element 插件
+		8.将下面的代码拷贝至 main.js 中
+			<!--// The Vue build version to load with the `import` command
+			// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+			import Vue from 'vue'
+			import App from './App'
+			import router from './router'
+			import ElementUI from 'element-ui' 
+			import 'element-ui/lib/theme-chalk/index.css';
+
+			Vue.config.productionTip = false
+
+			Vue.use(ElementUI);
+
+			/* eslint-disable no-new */
+			new Vue({
+			  el: '#app',
+			  router,
+			  components: { App },
+			  template: '<App/>'
+			})-->
+		9.cnpm install axios --save
+		10.在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios'
+		11. cnpm run dev 启动项目
     	</li>
     </ol>
 </body>
