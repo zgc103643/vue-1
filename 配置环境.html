@@ -50,44 +50,56 @@
         <hr>
         <li>cnpm run build 项目发布第一步 会在根目录下生成dist文件夹,这个 dist 文件夹下会包括1个index.html和一个static文件夹,这个dist文件夹就是我们需要上传到服务器上的文件</li>
     </ol>
+    <h1>如果你已经很熟悉vue直接看这里：这里是 vue + sass + element 的配置流程 : </h1>
     <ol>
-    	<li>如果你已经很熟悉vue直接看这里：这里是 vue + sass + element 的配置流程 : </li>
     	<li>
-    		1.vue init webpack XXX
-    		2.cnpm install --save-dev sass-loader
-    		3.cnpm install --save-dev node-sass
-    		4.找到build / webpack.base.conf.js 文件 中的 rules 数组
-    		5.在其中第二个对象元素后添加配置 
-			{
-			  test: /\.sass$/,
-			  loaders: ['style', 'css', 'sass']
-			}
-		6.cnpm install element-ui --save
-		7.打开 src/main.js 引入 element 插件
-		8.将下面的代码拷贝至 main.js 中
-			<!--// The Vue build version to load with the `import` command
-			// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-			import Vue from 'vue'
-			import App from './App'
-			import router from './router'
-			import ElementUI from 'element-ui' 
-			import 'element-ui/lib/theme-chalk/index.css';
-
-			Vue.config.productionTip = false
-
-			Vue.use(ElementUI);
-
-			/* eslint-disable no-new */
-			new Vue({
-			  el: '#app',
-			  router,
-			  components: { App },
-			  template: '<App/>'
-			})-->
-		9.cnpm install axios --save
-		10.在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios'
-		11.cnpm install 安装依赖
-		12.cnpm run dev 启动项目
+    		1.初始化项目  vue init webpack XXX      
+    		
+		    2.进入到项目 XXX 中,开始安装sass  		
+		    	step1:cnpm install --save-dev sass-loader 
+				step2:cnpm install --save-dev node-sass 
+				step3:找到build / webpack.base.conf.js 文件 中的 rules 数组
+				step4:在其中第二个对象元素后添加配置 
+					{
+					  test: /\.sass$/,
+					  loaders: ['style', 'css', 'sass']
+					}
+				step5:在.vue页面中的style标签中写入 lang='sass'
+				step6:完成安装
+			    									
+	    	3.进入到项目 XXX 中,开始安装element-ui 	
+	    		step1:cnpm install element-ui --save
+				step2:打开 src/main.js 引入 element 插件
+				step3:将下面的代码拷贝至 main.js 中
+						<!--// The Vue build version to load with the `import` command
+						// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+						import Vue from 'vue'
+						import App from './App'
+						import router from './router'
+						import ElementUI from 'element-ui' 
+						import 'element-ui/lib/theme-chalk/index.css';
+			
+						Vue.config.productionTip = false
+			
+						Vue.use(ElementUI);
+			
+						/* eslint-disable no-new */
+						new Vue({
+						  el: '#app',
+						  router,
+						  components: { App },
+						  template: '<App/>'
+						})-->
+				step4:完成安装
+				
+			4.进入到项目 XXX 中,开始安装axios
+				step1:cnpm install axios --save
+				step2:在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios'
+				step3:cnpm install 安装依赖
+				step4:安装完成
+			
+			5.cnpm run dev 启动项目 一般是 http://localhost:8080/#/
+			
     	</li>
     </ol>
 </body>
