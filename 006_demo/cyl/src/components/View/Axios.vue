@@ -1,16 +1,10 @@
 <template>
-	<div class="sass_content">
-		<p class="title">Sass 安装流程 :</p>
+	<div class="axios_content">
+		<p class="title">Axios 安装流程 :</p>
 		<ul class="link">
-			<li class="item">step1 : cnpm install --save-dev sass-loader </li>
-			<li class="item">step2 : cnpm install --save-dev node-sass  </li>
-			<li class="item">step3 : 配置webpack.base.conf.js 中的 
-				<a href='https://github.com/cyl0430/vue/blob/master/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83.html' target="_blank" class="vue_a github">
-					rules 数组
-				</a>
-			</li>
-			<li class="item">step4 : 在.vue页面中的style标签中写入 lang='sass'</li>
-			<li class="item">step5 : 完成安装</li>
+			<li class="item">step1 : cnpm install axios --save </li>
+			<li class="item">step2 : 在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios' </li>
+			<li class="item">step3 : 完成安装</li>
 		</ul>
 		<div class="hide vue_hide">{{$route.params.id}}</div>
 	</div>
@@ -18,12 +12,7 @@
 
 <script>
 	export default{
-		name:'SassPlug',
-		data(){
-			return {
-				
-			}
-		},
+		name:'Axios',
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
@@ -37,15 +26,12 @@
 			}else if (isBool.innerText == '03') {
 				isTitle.innerText = 'Axios'
 			}
-		},
-		methods:{
-			
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
-	.sass_content{
+<style lang="scss">
+	.axios_content{
 		.title{
 			font-size: 16px;
 			font-weight: 600;
@@ -54,8 +40,8 @@
 		.link{
 			list-style-type: none;
 			.item{
-				height: 40px;
-				line-height: 40px;
+				padding-top: 15px;
+				padding-bottom: 15px;
 				border-bottom: 1px solid #CCCCCC;
 				.github{
 					color: #409EFF;

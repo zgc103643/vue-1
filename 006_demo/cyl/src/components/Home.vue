@@ -7,7 +7,7 @@
     		</li>
     		<li class="vue_item title">Vue</li>
 				<li class="vue_item more">
-					<router-link to='/View/Public'>
+					<router-link to='/View/Public/00'>
 	    				<div class="moreBtn">查看更多</div>
 	    			</router-link>
 	    	</li>
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
 	  handleClick(tab, event) {
-	    console.log(tab, event);
+//	    console.log(tab, event);
 	  }
 	}
 }

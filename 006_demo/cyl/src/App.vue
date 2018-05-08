@@ -6,9 +6,9 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+	export default {
+	  name: 'App'
+	}
 </script>
 
 <style lang="scss">
@@ -68,6 +68,9 @@ export default {
 	  	opacity: 0;
 	  	-webkit-opacity: 0;
 	  	-moz-opacity: 0;
+	  }
+	  .vue_hide{
+	  	display: none;
 	  }
 	}
 </style>

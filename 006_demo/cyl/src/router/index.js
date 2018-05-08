@@ -6,11 +6,12 @@ import Top from '@/components/View/Top'
 import Public from '@/components/View/Public'
 import SassPlug from '@/components/View/Sass'
 import ElementUi from '@/components/View/ElementUi'
+import Axios from '@/components/View/Axios'
 
 Vue.use(Router)
 
 export default new Router({
-  mode:'history',
+	mode:'history',
   routes: [
     {
       path: '/',
@@ -23,19 +24,24 @@ export default new Router({
       component: Top,
       children:[
       	{
-      		path:'Public',
+      		path:'Public/:id',
       		name:'Public',
       		component:Public
       	},
       	{
-      		path:'Sass',
+      		path:'Sass/:id',
       		name:'SassPlug',
       		component:SassPlug
       	},
       	{
-      		path:'ElementUi',
+      		path:'ElementUi/:id',
       		name:'ElementUi',
       		component:ElementUi
+      	},
+      	{
+      		path:'Axios/:id',
+      		name:'Axios',
+      		component:Axios
       	}
       ]
     }

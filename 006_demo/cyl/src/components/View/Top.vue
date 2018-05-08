@@ -3,14 +3,18 @@
 		<div class="header">
 			<ul class="vue_link link">
 				<li class="vue_item item">
-					<button class="vue_button return" v-on:click="returnFun">返回上一页</button>
+					<div class="iconfont icon-zuojiantou title_icon" v-on:click="returnFun"></div>
 				</li>
-				<li class="vue_item item vue_opacity">2</li>
-				<li class="vue_item item vue_opacity">3</li>
+				<li class="vue_item item view_title">vue</li>
+				<li class="vue_item item">
+					<router-link to='/' class='vue_a'>
+						<div class="iconfont icon-shouye title_icon"></div>
+					</router-link>
+				</li>
 			</ul>
 		</div>
-		<div class="bottom">
-			<router-view></router-view>
+		<div class="content">
+			<router-view></router-view>	
 		</div>
 	</div>
 </template>
@@ -25,33 +29,29 @@
 		}
 	}
 </script>
-
 <style lang="scss">
 	.view_content{
 		.header{
-			height: 50px;
-			width: 100%;
 			border-bottom: 1px solid #CCCCCC;
+			height: 50px;
+			line-height: 50px;
 			.link{
-				height: 100%;
-				width: calc(100% - 30px);
-				margin: 0 auto !important;
+				padding-left: 15px !important;
+				padding-right: 15px !important;
 				.item{
-					.return{
-						width: 80px;
-						height: 35px;
-						text-align: center;
-						line-height: 35px;
-						cursor: pointer;
-						background-color: #000000;
-						color: white;
+					.title_icon{
+						font-size: 24px;
 					}
+				}
+				.view_title{
+					font-size: 16px;
+					font-weight: 600;
+					text-transform: capitalize;
 				}
 			}
 		}
-		.bottom{
-			padding: 15px;
-			padding-bottom: 0;
+		.content{
+			padding: 20px;
 			padding-right: 0;
 		}
 	}
