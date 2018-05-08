@@ -3,13 +3,13 @@
     <div class="header">
     	<ul class="vue_link">
     		<li class="vue_item">
-    			<img class="logo" src="../assets/logo.png"/>
+    			<div class="iconfont icon-caidan aside_icon"></div>
     		</li>
-    		<li class="vue_item title">Vue</li>
+    		<li class="vue_item title">{{msg}}</li>
 				<li class="vue_item more">
-					<router-link to='/View/Public/00'>
-	    				<div class="moreBtn">查看更多</div>
-	    			</router-link>
+					<router-link to='/View/Public/00' class='vue_a'>
+	    				<div class="iconfont icon-gengduo more_icon"></div>
+	    		</router-link>
 	    	</li>
     	</ul>
     </div>
@@ -46,7 +46,8 @@ export default {
       	'https://italyclassico.casacdn.com/image/prod/20180408/985150.jpg',
       	'https://italyclassico.casacdn.com/image/prod/20180408/424512.jpg'
       ],
-    	activeName: 'first'
+    	activeName: 'first',
+    	msg:'vue'
     }
   },
   methods: {
@@ -69,24 +70,17 @@ export default {
 				width: -webkit-calc(100% - 30px);
 				margin:  0 auto !important;
 				.vue_item{
-					.logo{
-						width: 35px;
-						height: 35px;
-						vertical-align: top;
+					.aside_icon{
+						font-size: 24px;
+					}
+					.more_icon{
+						font-size: 24px;
 					}
 				}
 				.title{
-					font-size: 16px;
+					text-transform: capitalize;
 					font-weight: 600;
-				}
-				.moreBtn{
-					width: 70px;
-					text-align: center;
-					height: 35px;
-					line-height: 35px;
-					background-color: #000;
-					color: white;
-					cursor: pointer;
+					font-size: 16px;
 				}
 			}
 		}
