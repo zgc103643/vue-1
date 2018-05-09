@@ -9,6 +9,9 @@
 		<router-link to='/View/Axios/03' class='vue_a'>
 			<div class="rowObj">安装 axios 环境</div>
 		</router-link>
+		<router-link to='/View/Assemb/04' class='vue_a'>
+			<div class="rowObj">引入自定义组件</div>
+		</router-link>
 		<div class="hide vue_hide">{{$route.params.id}}</div>
 	</div>
 </template>

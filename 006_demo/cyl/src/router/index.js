@@ -7,11 +7,12 @@ import Public from '@/components/View/Public'
 import SassPlug from '@/components/View/Sass'
 import ElementUi from '@/components/View/ElementUi'
 import Axios from '@/components/View/Axios'
+import Assemb from '@/components/View/Assemb'
 
 Vue.use(Router)
 
 export default new Router({
-	mode:'history',
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -42,6 +43,11 @@ export default new Router({
       		path:'Axios/:id',
       		name:'Axios',
       		component:Axios
+      	},
+      	{
+      		path:'Assemb/:id',
+      		name:'Assemb',
+      		component:Assemb
       	}
       ]
     }
