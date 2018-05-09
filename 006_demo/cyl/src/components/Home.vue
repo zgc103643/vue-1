@@ -13,7 +13,7 @@
 	    	</li>
     	</ul>
     </div>
-    <div class="bottom">
+    <div class="content">
     	<div class="banner">
 				<template>
 				  <el-carousel :interval="5000" arrow="always">
@@ -26,24 +26,30 @@
     	<div class="tab">
     		<template>
 				  <el-tabs v-model="activeName">
-				    <el-tab-pane label="个人介绍" name="first">个人介绍</el-tab-pane>
-				    <el-tab-pane label="专业技能" name="second">专业技能</el-tab-pane>
-				    <el-tab-pane label="项目管理" name="third">项目管理</el-tab-pane>
+				    <el-tab-pane label="A" name="first">A</el-tab-pane>
+				    <el-tab-pane label="B" name="second">B</el-tab-pane>
+				    <el-tab-pane label="C" name="third">C</el-tab-pane>
 				  </el-tabs>
 				</template>
     	</div>
     </div>
+    <div class="gray"></div>
+    <div class="caozui">
+    	<el-button type="primary">弹窗</el-button>
+    </div>
     <Bottom></Bottom>
+    <Alert></Alert>
   </div>
 </template>
 
 <script>
 	import Bottom from './Assembly/Bottom'
-	
+	import Alert from './Assembly/Alert'
 	export default {
 	  name: 'Home',
 	  components: {
-			Bottom
+			Bottom,
+			Alert
 		},
 	  data () {
 	    return {
@@ -90,25 +96,42 @@
 				}
 			}
 		}
-		.bottom{
+		.content{
 			.banner{
 				._img{
 					width: 100%;
 					height: 100%;
 					vertical-align: top;
 				}
+				.el-carousel__container{
+					height: 214px;
+				}
+			}
+			.tab{
+				border-bottom: 1px solid #CCCCCC;
+				padding-bottom: 20px;
+				.el-tabs__nav{
+					width: 100%;
+				}
+				.el-tabs__item{
+					padding: 0;
+					width: 33.333333%;
+					text-align: center;
+				}
 			}
 		}
-		.tab{
-			border-bottom: 1px solid #CCCCCC;
-			padding-bottom: 20px;
-			.el-tabs__nav{
-				width: 100%;
-			}
-			.el-tabs__item{
-				padding: 0;
-				width: 33.333333%;
-				text-align: center;
+		.gray{
+			width: 100%;
+			height: 10px;
+			background-color: #F2F2F2;
+		}
+		.caozui{
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 10px;
+			overflow: hidden;
+			._params{
+				margin-left: 10px;
 			}
 		}
 	}
