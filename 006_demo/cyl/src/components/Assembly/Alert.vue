@@ -1,6 +1,8 @@
 <template>
-	<div class="alert_content" v-show="isShow == true" v-on:click="alertFun">
-		
+	<div class="alert_content">
+		<div class="alert_mak" v-show="isShow == true">
+			<el-button type="primary" @click="toHide">关闭弹框</el-button>
+		</div>
 	</div>
 </template>
 
@@ -9,12 +11,13 @@
 		name:'Alert',
 		data(){
 			return {
-				isShow:true
+				
 			}
 		},
+		props: ['isShow'],
 		methods:{
-			alertFun:function () {
-				this.isShow = false;
+			toHide:function () {
+				this.$emit('hide');
 			}
 		}
 	}
@@ -22,12 +25,16 @@
 
 <style lang="scss">
 	.alert_content{
-		width: 100vw;
-		height: 100vh;
-		position: fixed;
-		left: 0;
-		top: 0;
-		z-index: 9999;
-		background-color: rgba(0,0,0,0.5);
+		.alert_mak{
+			width: 100vw;
+			height: 100vh;
+			text-align: center;
+			line-height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 9999;
+			background-color: rgba(0,0,0,0.5);	
+		}
 	}
 </style>

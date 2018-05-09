@@ -12,6 +12,9 @@
 </script>
 
 <style lang="scss">
+	html{
+		position: relative;
+	}
 	*{
 		margin: 0;
 		padding: 0;

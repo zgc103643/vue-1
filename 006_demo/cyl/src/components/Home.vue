@@ -35,10 +35,10 @@
     </div>
     <div class="gray"></div>
     <div class="caozui">
-    	<el-button type="primary">弹窗</el-button>
+    	<el-button type="primary" v-on:click = 'btnFun'>弹窗</el-button>
     </div>
     <Bottom></Bottom>
-    <Alert></Alert>
+    <Alert :isShow='isBool == true' @hide = 'hideDialog'></Alert>
   </div>
 </template>
 
@@ -59,12 +59,20 @@
 	      	'https://italyclassico.casacdn.com/image/prod/20180408/424512.jpg'
 	      ],
 	    	activeName: 'first',
-	    	msg:'vue'
+	    	msg:'vue',
+	    	isBool:false
 	    }
 	  },
 	  methods: {
 		  asideFun:function () {
 		  	
+		  },
+		  btnFun:function () {
+		  	this.isBool = true;
+		  },
+		  hideDialog:function () {
+		  	console.log("00")
+		  	this.isBool = false;
 		  }
 		}
 	}
