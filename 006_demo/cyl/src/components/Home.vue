@@ -33,24 +33,12 @@
 				</template>
     	</div>
     </div>
-    <div class="gray"></div>
-    <div class="caozui">
-    	<el-button type="primary" v-on:click = 'btnFun'>弹窗</el-button>
-    </div>
-    <Bottom></Bottom>
-    <Alert :isShow='isBool == true' @hide = 'hideDialog'></Alert>
   </div>
 </template>
 
 <script>
-	import Bottom from './Assembly/Bottom'
-	import Alert from './Assembly/Alert'
 	export default {
 	  name: 'Home',
-	  components: {
-			Bottom,
-			Alert
-		},
 	  data () {
 	    return {
 	      imgArr:[
@@ -59,20 +47,12 @@
 	      	'https://italyclassico.casacdn.com/image/prod/20180408/424512.jpg'
 	      ],
 	    	activeName: 'first',
-	    	msg:'vue',
-	    	isBool:false
+	    	msg:'vue'
 	    }
 	  },
 	  methods: {
 		  asideFun:function () {
 		  	
-		  },
-		  btnFun:function () {
-		  	this.isBool = true;
-		  },
-		  hideDialog:function () {
-		  	console.log("00")
-		  	this.isBool = false;
 		  }
 		}
 	}

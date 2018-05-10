@@ -12,6 +12,9 @@
 		<router-link to='/View/Assemb/04' class='vue_a'>
 			<div class="rowObj">引入自定义组件</div>
 		</router-link>
+		<router-link to='/View/Layer/05' class='vue_a'>
+			<div class="rowObj">两个页面之间的传值,如 弹窗</div>
+		</router-link>
 		<div class="hide vue_hide">{{$route.params.id}}</div>
 	</div>
 </template>
@@ -25,12 +28,6 @@
 			console.log(isBool.innerText)
 			if (isBool.innerText == '00') {
 				isTitle.innerText = 'vue'
-			}else if (isBool.innerText == '01') {
-				isTitle.innerText = 'Sass'
-			}else if (isBool.innerText == '02') {
-				isTitle.innerText = 'ElementUi'
-			}else if (isBool.innerText == '03') {
-				isTitle.innerText = 'Axios'
 			}
 		}
 	}

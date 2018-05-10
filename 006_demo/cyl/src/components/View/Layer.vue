@@ -1,24 +1,42 @@
 <template>
 	<div class="axios_content">
-		<p class="title">Axios 安装流程 :</p>
+		<p class="title">Layer 两个页面之间的传值 :</p>
 		<ul class="link">
-			<li class="item">step1 : cnpm install axios --save </li>
-			<li class="item">step2 : 在哪个.vue文件中使用，就在哪个页面中引入 import axios from 'axios' </li>
-			<li class="item">step3 : 完成安装</li>
+			<li class="item">
+				<el-button type="primary" v-on:click = 'layerFun'>Layer</el-button>
+			</li>
 		</ul>
 		<div class="hide vue_hide">{{$route.params.id}}</div>
+		<Alert :isShow='isBool == true' :message='msg' @layer = 'hideMask'></Alert>
 	</div>
 </template>
 
 <script>
+	import Alert from '../Assembly/Alert'
 	export default{
-		name:'Axios',
+		name:'Layer',
+		components: {
+			Alert
+		},
+		data(){
+			return {
+				isBool:false,
+				msg:'我是警告语'
+			}
+		},
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
-			console.log(isBool.innerText)
-			if (isBool.innerText == '03') {
-				isTitle.innerText = 'Axios'
+			if (isBool.innerText == '05') {
+				isTitle.innerText = '弹窗'
+			}
+		},
+		methods:{
+			layerFun:function () {
+			  	this.isBool = true;
+			},
+			hideMask:function () {
+			  	this.isBool = false;
 			}
 		}
 	}

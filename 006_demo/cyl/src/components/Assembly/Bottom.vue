@@ -1,7 +1,7 @@
 <template>
 	<div class="aside_content">
 		<router-link to='/View/Assemb/04' class='vue_a'>
-			把 公共底部 作为 单独的组件 引入
+			引入组件
 		</router-link>
 	</div>
 </template>

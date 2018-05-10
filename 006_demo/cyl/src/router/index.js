@@ -8,6 +8,7 @@ import SassPlug from '@/components/View/Sass'
 import ElementUi from '@/components/View/ElementUi'
 import Axios from '@/components/View/Axios'
 import Assemb from '@/components/View/Assemb'
+import Layer from '@/components/View/Layer'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       		path:'Assemb/:id',
       		name:'Assemb',
       		component:Assemb
+      	},
+      	{
+      		path:'Layer/:id',
+      		name:'Layer',
+      		component:Layer
       	}
       ]
     }

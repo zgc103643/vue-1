@@ -1,7 +1,7 @@
 <template>
 	<div class="alert_content">
-		<div class="alert_mak" v-show="isShow == true">
-			<el-button type="primary" @click="toHide">关闭弹框</el-button>
+		<div class="alert_mak" v-show="isShow == true" @click="toHide">
+			{{message}}
 		</div>
 	</div>
 </template>
@@ -11,13 +11,13 @@
 		name:'Alert',
 		data(){
 			return {
-				
+
 			}
 		},
-		props: ['isShow'],
+		props: ['isShow','message'],
 		methods:{
 			toHide:function () {
-				this.$emit('hide');
+				this.$emit('layer');
 			}
 		}
 	}
@@ -35,6 +35,7 @@
 			top: 0;
 			z-index: 9999;
 			background-color: rgba(0,0,0,0.5);	
+			color: white;
 		}
 	}
 </style>

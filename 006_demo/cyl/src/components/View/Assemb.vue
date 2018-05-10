@@ -8,25 +8,22 @@
 			<li class="item">step4 : 引入完毕 </li>
 		</ul>
 		<div class="hide vue_hide">{{$route.params.id}}</div>
+		<Bottom></Bottom>
 	</div>
 </template>
 
 <script>
+	import Bottom from '../Assembly/Bottom'
 	export default{
 		name:'Assemb',
+		components: {
+			Bottom
+		},
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
 			console.log(isBool.innerText)
-			if (isBool.innerText == '00') {
-				isTitle.innerText = 'vue'
-			}else if (isBool.innerText == '01') {
-				isTitle.innerText = 'Sass'
-			}else if (isBool.innerText == '02') {
-				isTitle.innerText = 'ElementUi'
-			}else if (isBool.innerText == '03') {
-				isTitle.innerText = 'Axios'
-			}else if (isBool.innerText == '04') {
+			if (isBool.innerText == '04') {
 				isTitle.innerText = '引入自定义组件'
 			}
 		}

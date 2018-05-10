@@ -22,14 +22,8 @@
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
 			console.log(isBool.innerText)
-			if (isBool.innerText == '00') {
-				isTitle.innerText = 'vue'
-			}else if (isBool.innerText == '01') {
-				isTitle.innerText = 'Sass'
-			}else if (isBool.innerText == '02') {
+			if (isBool.innerText == '02') {
 				isTitle.innerText = 'ElementUi'
-			}else if (isBool.innerText == '03') {
-				isTitle.innerText = 'Axios'
 			}
 		}
 	}
