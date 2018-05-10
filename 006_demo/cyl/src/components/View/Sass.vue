@@ -1,5 +1,5 @@
 <template>
-	<div class="sass_content">
+	<div class="sass_content vue_content">
 		<p class="title">Sass 安装流程 :</p>
 		<ul class="link">
 			<li class="item">step1 : cnpm install --save-dev sass-loader </li>

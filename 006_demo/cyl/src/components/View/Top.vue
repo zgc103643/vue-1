@@ -41,6 +41,7 @@
 				.item{
 					.title_icon{
 						font-size: 24px;
+						color: #000000;
 					}
 				}
 				.view_title{
@@ -50,7 +51,7 @@
 				}
 			}
 		}
-		.content{
+		.vue_content{
 			padding: 20px;
 			padding-right: 0;
 		}

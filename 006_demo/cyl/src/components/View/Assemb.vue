@@ -1,5 +1,5 @@
 <template>
-	<div class="assemb_content">
+	<div class="assemb_content vue_content">
 		<p class="title">自定义组件 引入流程 :</p>
 		<ul class="link">
 			<li class="item">step1 : 在模板中定义 自定义组件 的名字<!-- <jscyl></jscyl>--></li>

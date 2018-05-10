@@ -7,8 +7,8 @@
     		</li>
     		<li class="vue_item title">{{msg}}</li>
 				<li class="vue_item more">
-					<router-link to='/View/Public/00' class='vue_a'>
-	    				<div class="iconfont icon-gengduo more_icon"></div>
+					<router-link to='/View/Sign/0' class='vue_a'>
+	    				<div class="iconfont icon-wode more_icon"></div>
 	    		</router-link>
 	    	</li>
     	</ul>
@@ -86,9 +86,11 @@
 				.vue_item{
 					.aside_icon{
 						font-size: 24px;
+						color: #000;
 					}
 					.more_icon{
 						font-size: 24px;
+						color: #000;
 					}
 				}
 				.title{

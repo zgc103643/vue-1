@@ -1,5 +1,5 @@
 <template>
-	<div class="axios_content">
+	<div class="axios_content vue_content">
 		<p class="title">Axios 安装流程 :</p>
 		<ul class="link">
 			<li class="item">step1 : cnpm install axios --save </li>

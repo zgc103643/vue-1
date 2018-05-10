@@ -1,5 +1,5 @@
 <template>
-	<div class="axios_content">
+	<div class="layer_content vue_content">
 		<p class="title">Layer 两个页面之间的传值 :</p>
 		<ul class="link">
 			<li class="item">
@@ -43,7 +43,7 @@
 </script>
 
 <style lang="scss">
-	.axios_content{
+	.layer_content{
 		.title{
 			font-size: 16px;
 			font-weight: 600;

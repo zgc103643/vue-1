@@ -2,7 +2,7 @@
 	<div class="aside_plug" v-show="isAsideData" v-on:click="closeFun">
 		<div class="aside_worp">
 			<div class="title">
-				<img class="logo" src="../../assets/logo.png"/>
+				配置基本环境以及常用方法
 			</div>
 			<div class="content">
 				<router-link to='/View/Sass/01' class='vue_a'>
@@ -14,11 +14,17 @@
 				<router-link to='/View/Axios/03' class='vue_a'>
 					<div class="rowObj">安装 axios 环境</div>
 				</router-link>
+				<router-link to='/View/404' class='vue_a'>
+					<div class="rowObj">配置 404 页面</div>
+				</router-link>
 				<router-link to='/View/Assemb/04' class='vue_a'>
 					<div class="rowObj">引入自定义组件</div>
 				</router-link>
 				<router-link to='/View/Layer/05' class='vue_a'>
 					<div class="rowObj">两个页面之间的传值,如 弹窗</div>
+				</router-link>
+				<router-link to='/View/Watch/06' class='vue_a'>
+					<div class="rowObj">初始化判断 watch监听</div>
 				</router-link>
 			</div>
 		</div>
@@ -52,11 +58,13 @@
 			height: 100%;
 			background-color: white;
 			.title{
+				width: 100%;
 				text-align: center;
-				.logo{
-					width: 100px;
-					height: 100px;
-				}
+				font-size: 18px;
+				height: 50px;
+				line-height: 50px;
+				font-weight: 600;
+				letter-spacing: 0.5px;
 			}
 			.content{
 				.rowObj{

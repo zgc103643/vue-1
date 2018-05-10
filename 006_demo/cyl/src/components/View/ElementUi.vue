@@ -1,5 +1,5 @@
 <template>
-	<div class="elementUi_content">
+	<div class="elementUi_content vue_content">
 		<p class="title">ElementUi 安装流程 :</p>
 		<ul class="link">
 			<li class="item">step1 : cnpm install element-ui --save </li>
