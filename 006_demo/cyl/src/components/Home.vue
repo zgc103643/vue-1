@@ -26,19 +26,29 @@
     	<div class="tab">
     		<template>
 				  <el-tabs v-model="activeName">
-				    <el-tab-pane label="A" name="first">A</el-tab-pane>
-				    <el-tab-pane label="B" name="second">B</el-tab-pane>
-				    <el-tab-pane label="C" name="third">C</el-tab-pane>
+				    <el-tab-pane label="简介" name="first">
+				    	<div class="info"><span>姓名</span> : jscyl</div>
+				    	<div class="info"><span>联系方式</span> : 13849007907</div>
+				    	<div class="info"><span>邮箱</span> : 13849007907@163.com</div>
+				    	<div class="info"><span>GitHub</span> : https://github.com/cyl0430</div>
+				    </el-tab-pane>
+				    <el-tab-pane label="专业技术" name="second">专业技术</el-tab-pane>
+				    <el-tab-pane label="项目管理" name="third">项目管理</el-tab-pane>
 				  </el-tabs>
 				</template>
     	</div>
     </div>
+  	<Aside :isAsideData = 'isAside' @asideparams = 'closeLayer'></Aside>
   </div>
 </template>
 
 <script>
+	import Aside from './Assembly/Aside'
 	export default {
 	  name: 'Home',
+	  components:{
+	  	Aside
+	  },
 	  data () {
 	    return {
 	      imgArr:[
@@ -47,12 +57,16 @@
 	      	'https://italyclassico.casacdn.com/image/prod/20180408/424512.jpg'
 	      ],
 	    	activeName: 'first',
-	    	msg:'vue'
+	    	msg:'vue',
+	    	isAside:false
 	    }
 	  },
 	  methods: {
 		  asideFun:function () {
-		  	
+		  	this.isAside = true;
+		  },
+		  closeLayer:function () {
+		  	this.isAside = false;
 		  }
 		}
 	}
@@ -105,6 +119,15 @@
 					padding: 0;
 					width: 33.333333%;
 					text-align: center;
+				}
+				.info{
+					padding-top: 15px;
+					padding-bottom: 15px;
+					font-size: 14px;
+					margin-left: 15px;
+					span{
+						font-weight: 600;	
+					}
 				}
 			}
 		}
