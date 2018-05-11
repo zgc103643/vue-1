@@ -59,7 +59,7 @@
 					this.isBool = true;
 					return false;
 				}
-				
+				this.$store.commit('changeLogin');
 				window.location.href = '/';
 			},
 			hideMask:function () {

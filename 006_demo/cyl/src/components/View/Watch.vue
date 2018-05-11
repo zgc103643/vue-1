@@ -32,7 +32,7 @@
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
-			if (isBool.innerText == '06') {
+			if (isBool.innerText == '003') {
 				isTitle.innerText = 'Watch'
 			}
 		},

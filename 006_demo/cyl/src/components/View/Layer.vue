@@ -27,7 +27,7 @@
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
-			if (isBool.innerText == '05') {
+			if (isBool.innerText == '002') {
 				isTitle.innerText = '弹窗'
 			}
 		},

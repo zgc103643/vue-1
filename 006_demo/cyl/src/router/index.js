@@ -14,7 +14,10 @@ import Watch from '@/components/View/Watch'
 import Sign from '@/components/View/Sign'
 import Login from '@/components/View/Login'
 import Time from '@/components/View/Time'
+import Vuex from '@/components/View/Vuex'
 
+//下面是需要登陆方可进入的
+import Info from '@/components/View/Account/Info'
 
 Vue.use(Router)
 
@@ -76,6 +79,16 @@ export default new Router({
       		name:'Time',
       		component:Time
       	},
+      	{
+		      path: 'Account/Info/:id',
+		      name: 'Info',
+		      component: Info
+		    },
+		    {
+		      path: 'Vuex/:id',
+		      name: 'Vuex',
+		      component: Vuex
+		    },
       	{
 		      path:'*',
 		    	name:'Error',

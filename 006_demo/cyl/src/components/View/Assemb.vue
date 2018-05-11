@@ -23,7 +23,7 @@
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
 			console.log(isBool.innerText)
-			if (isBool.innerText == '04') {
+			if (isBool.innerText == '001') {
 				isTitle.innerText = '引入自定义组件'
 			}
 		}

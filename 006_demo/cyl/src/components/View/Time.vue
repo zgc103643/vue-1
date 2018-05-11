@@ -21,7 +21,7 @@
 		mounted: function() {
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
-			if(isBool.innerText == '07') {
+			if(isBool.innerText == '004') {
 				isTitle.innerText = '倒计时'
 			}
 		},
