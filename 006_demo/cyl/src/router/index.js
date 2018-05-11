@@ -13,6 +13,7 @@ import Layer from '@/components/View/Layer'
 import Watch from '@/components/View/Watch'
 import Sign from '@/components/View/Sign'
 import Login from '@/components/View/Login'
+import Time from '@/components/View/Time'
 
 
 Vue.use(Router)
@@ -69,6 +70,11 @@ export default new Router({
       		path:'Login/:id',
       		name:'Login',
       		component:Login
+      	},
+      	{
+      		path:'Time/:id',
+      		name:'Time',
+      		component:Time
       	},
       	{
 		      path:'*',

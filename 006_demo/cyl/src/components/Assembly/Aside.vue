@@ -26,6 +26,9 @@
 				<router-link to='/View/Watch/06' class='vue_a'>
 					<div class="rowObj">初始化判断 watch监听</div>
 				</router-link>
+				<router-link to='/View/Time/07' class='vue_a'>
+					<div class="rowObj">倒计时</div>
+				</router-link>
 			</div>
 		</div>
 	</div>

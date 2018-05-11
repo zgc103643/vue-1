@@ -7,7 +7,7 @@
     		</li>
     		<li class="vue_item title">{{msg}}</li>
 				<li class="vue_item more">
-					<router-link to='/View/Sign/0' class='vue_a'>
+					<router-link to='/View/Login/1' class='vue_a'>
 	    				<div class="iconfont icon-wode more_icon"></div>
 	    		</router-link>
 	    	</li>
