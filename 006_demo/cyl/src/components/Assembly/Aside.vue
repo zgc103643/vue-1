@@ -2,7 +2,7 @@
 	<div class="aside_plug" v-show="isAsideData" v-on:click="closeFun">
 		<div class="aside_worp">
 			<div class="title">
-				配置基本环境以及常用方法
+				配置基本环境
 			</div>
 			<div class="content">
 				<router-link to='/View/Sass/01' class='vue_a'>
@@ -17,6 +17,11 @@
 				<router-link to='/View/404' class='vue_a'>
 					<div class="rowObj">配置 404 页面</div>
 				</router-link>
+			</div>
+			<div class="title">
+				常用功能
+			</div>
+			<div class="content">
 				<router-link to='/View/Assemb/04' class='vue_a'>
 					<div class="rowObj">引入自定义组件</div>
 				</router-link>
