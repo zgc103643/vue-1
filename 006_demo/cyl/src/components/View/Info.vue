@@ -1,8 +1,7 @@
 <template>
 	<div class="info_content vue_content">
 		<div class="hide vue_hide">{{$route.params.id}}</div>
-		<el-button type="primary" v-on:click="isLoginFun">更改状态值为 1</el-button>
-		状态值 : {{$store.state.count}}
+		 {{user_data}}
 	</div>
 </template>
 
@@ -11,7 +10,7 @@
 		name:'Info',
 		data(){
 			return {
-				
+				user_data:'登录用户名'
 			}
 		},
 		mounted:function(){
@@ -20,11 +19,10 @@
 			if (isBool.innerText == '08') {
 				isTitle.innerText = '个人中心';
 			}
+			
 		},
 		methods:{
-			isLoginFun() {
-				this.$store.commit('changeLogin');
-			}
+			
 		}
 	}
 </script>

@@ -59,7 +59,17 @@
 					this.isBool = true;
 					return false;
 				}
-				this.$store.commit('changeLogin');
+				//实际项目中,这里采用 ajax 判断
+				if (this.user !== this.$cookieStore.getCookie('username')) {
+					this.msg = '请输入注册时的手机号';
+					this.isBool = true;
+					return false;
+				}
+				if (this.pwd !== this.$cookieStore.getCookie('pwd')) {
+					this.msg = '请输入正确的密码';
+					this.isBool = true;
+					return false;
+				}
 				window.location.href = '/';
 			},
 			hideMask:function () {

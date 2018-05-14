@@ -1,6 +1,14 @@
 <template>
 	<div class="aside_plug" v-show="isAsideData" v-on:click="closeFun">
 		<div class="aside_worp">
+			<div class="account">
+				<router-link to='/View/Login/1' class='vue_a'>
+					<div class="t login">登录</div>
+				</router-link>
+				<router-link to='/View/Sign/0' class='vue_a'>
+					<div class="t">注册</div>
+				</router-link>
+			</div>
 			<div class="title">
 				配置基本环境
 			</div>
@@ -37,6 +45,9 @@
 				<router-link to='/View/Time/004' class='vue_a'>
 					<div class="rowObj">倒计时</div>
 				</router-link>
+				<router-link to='/View/Cookie/005' class='vue_a'>
+					<div class="rowObj">cookie</div>
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -68,6 +79,22 @@
 			width: 70%;
 			height: 100%;
 			background-color: white;
+			.account{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				overflow: hidden;
+				border-bottom: 1px solid #CCCCCC;
+				.t{
+					float: left;
+					width: 49%;
+					text-align: center;
+					color: #000000;
+				}
+				.login{
+					border-right: 1px solid #CCCCCC;
+				}
+			}
 			.title{
 				width: 100%;
 				text-align: center;

@@ -6,6 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './vuex/store'
+import {addCookie, getCookie, delCookie} from './assets/cookie'; //引入 cookie
 
 Vue.config.productionTip = false
 
@@ -21,3 +22,9 @@ new Vue({
 	},
 	template: '<App/>'
 })
+
+Vue.prototype.$cookieStore = {
+  addCookie,
+  getCookie,
+  delCookie
+}

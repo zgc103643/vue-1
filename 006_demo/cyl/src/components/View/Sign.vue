@@ -95,7 +95,9 @@
 					this.isBool = true;
 					return false;
 				}
-				
+				//注册时将注册的手机号和密码存储在 cookie 中
+				this.$cookieStore.addCookie('username', this.user);
+				this.$cookieStore.addCookie('pwd', this.pwd);
 				window.location.href = '/View/Login/1.html';
 			}
 		}

@@ -15,9 +15,10 @@ import Sign from '@/components/View/Sign'
 import Login from '@/components/View/Login'
 import Time from '@/components/View/Time'
 import Vuex from '@/components/View/Vuex'
+import Cookie from '@/components/View/Cookie'
 
 //下面是需要登陆方可进入的
-import Info from '@/components/View/Account/Info'
+import Info from '@/components/View/Info'
 
 Vue.use(Router)
 
@@ -80,7 +81,7 @@ export default new Router({
       		component:Time
       	},
       	{
-		      path: 'Account/Info/:id',
+		      path: 'Info/:id',
 		      name: 'Info',
 		      component: Info
 		    },
@@ -88,6 +89,11 @@ export default new Router({
 		      path: 'Vuex/:id',
 		      name: 'Vuex',
 		      component: Vuex
+		    },
+		    {
+		      path: 'Cookie/:id',
+		      name: 'Cookie',
+		      component: Cookie
 		    },
       	{
 		      path:'*',
