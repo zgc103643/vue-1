@@ -18,6 +18,9 @@ import Vuex from '@/components/View/Vuex'
 import Cookie from '@/components/View/Cookie'
 import Scroll from '@/components/View/Scroll'
 import Delect from '@/components/View/Delect'
+import Product from '@/components/View/Product'
+import Order from '@/components/View/Order'
+import Collection from '@/components/View/Collection'
 
 //下面是需要登陆方可进入的
 import Info from '@/components/View/Info'
@@ -109,6 +112,21 @@ export default new Router({
 		      path: 'Delect/:id',
 		      name: 'Delect',
 		      component: Delect
+		    },
+		    {
+		      path: 'Product/:id',
+		      name: 'Product',
+		      component: Product
+		    },
+		    {
+		      path: 'Order/:id',
+		      name: 'Order',
+		      component: Order
+		    },
+		    {
+		      path: 'Collection/:id',
+		      name: 'Collection',
+		      component: Collection
 		    },
       	{
 		      path:'*',

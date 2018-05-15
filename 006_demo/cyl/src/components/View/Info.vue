@@ -8,7 +8,13 @@
 					<el-button type="primary" class='btnObj'>加载更多</el-button>
 				</router-link>
 				<router-link to='/View/Delect/del'>
-					<el-button type="primary" class='btnObj'>删除收藏</el-button>
+					<el-button type="primary" class='btnObj'>删除指定元素</el-button>
+				</router-link>
+				<router-link to='/View/Collection/coll'>
+					<el-button type="primary" class='btnObj'>商品收藏</el-button>
+				</router-link>
+				<router-link to='/View/Product/pro'>
+					<el-button type="primary" class='btnObj'>JS控制页面跳转</el-button>
 				</router-link>
 			</div>
 		</div>
