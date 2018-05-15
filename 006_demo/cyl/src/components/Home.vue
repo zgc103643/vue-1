@@ -17,7 +17,7 @@
     	<div class="banner">
 				<template>
 				  <el-carousel :interval="5000" arrow="always">
-				    <el-carousel-item v-for="item in imgArr" :key="item">
+				    <el-carousel-item v-for="item in imgArr" :key="item" class='img_div'>
 				      <img class="_img" :src="item"/>
 				    </el-carousel-item>
 				  </el-carousel>
@@ -44,8 +44,48 @@
 				    		https://github.com/cyl0430
 				    	</div>
 				    </el-tab-pane>
-				    <el-tab-pane label="专业技能" name="second">B</el-tab-pane>
-				    <el-tab-pane label="项目管理" name="third">C</el-tab-pane>
+				    <el-tab-pane label="专业技能" name="second">
+				    	<div class="info">
+				    		掌握grunt和vue搭建项目框架,配置sass/自动监听/代码压缩的环境
+				    	</div>
+				    	<div class="info">
+				    		掌握ajax数据交互和dom渲染页面
+				    	</div>
+				    	<div class="info">
+				    		熟练运用JQ，bootstrap，layer等优化代码
+				    	</div>
+				    	<div class="info">
+				    		能根据项目的实际需求封装插件
+				    	</div>
+				    	<div class="info">
+				    		掌握响应式开发，调试页面兼容 ，ps切图
+				    	</div>
+				    	<div class="info">
+				    		掌握cdn预加载,雪碧图等优化代码的方法
+				    	</div>
+				    	<div class="info">
+				    		掌握SVN和github的代码管理
+				    	</div>
+				    </el-tab-pane>
+				    <el-tab-pane label="项目管理" name="third">
+				    	<div class="info">
+				    		<a href="https://www.oujuhui.com/" class="vue_a" target="_blank">
+				    			<div class="info">
+						    		<span>oujuhui.com</span>
+						    	</div>
+				    		</a>
+				    		<a href="http://eurooomall.top/" class="vue_a" target="_blank">
+				    			<div class="info">
+						    		<span>eurooo.top</span>
+						    	</div>
+				    		</a>
+				    		<a href="https://www.italyclassico.com/" class="vue_a" target="_blank">
+				    			<div class="info">
+						    		<span>italyclassico.com</span>
+						    	</div>
+				    		</a>
+				    	</div>
+				    </el-tab-pane>
 				  </el-tabs>
 				</template>
     	</div>
@@ -64,9 +104,9 @@
 	  data () {
 	    return {
 	      imgArr:[
-	      	'https://italyclassico.casacdn.com/image/prod/20180408/882726.jpg',
-	      	'https://italyclassico.casacdn.com/image/prod/20180408/985150.jpg',
-	      	'https://italyclassico.casacdn.com/image/prod/20180408/424512.jpg'
+	      	'http://jspang.com/resume/images/html5.png',
+	      	'http://jspang.com/resume/images/javascript.png',
+	      	'http://jspang.com/resume/images/grunt.png'
 	      ],
 	    	activeName: 'first',
 	    	msg:'vue',
@@ -114,10 +154,13 @@
 		}
 		.content{
 			.banner{
-				._img{
-					width: 100%;
-					height: 100%;
-					vertical-align: top;
+				.img_div{
+					text-align: center;
+					._img{
+						width: 200px;
+						height: 200px;
+						vertical-align: top;
+					}
 				}
 				.el-carousel__container{
 					height: 214px;
@@ -137,10 +180,16 @@
 				.info{
 					padding-top: 15px;
 					padding-bottom: 15px;
-					font-size: 14px;
+					font-size: 14px !important;
 					margin-left: 15px;
 					span{
-						font-weight: 600;	
+						font-size: 16px;
+							font-weight: 600;
+					}
+					.vue_a{
+						color: black;
+						font-size: 16px;
+						font-weight: 600;
 					}
 				}
 			}
