@@ -16,6 +16,8 @@ import Login from '@/components/View/Login'
 import Time from '@/components/View/Time'
 import Vuex from '@/components/View/Vuex'
 import Cookie from '@/components/View/Cookie'
+import Scroll from '@/components/View/Scroll'
+import Delect from '@/components/View/Delect'
 
 //下面是需要登陆方可进入的
 import Info from '@/components/View/Info'
@@ -83,7 +85,10 @@ export default new Router({
       	{
 		      path: 'Info/:id',
 		      name: 'Info',
-		      component: Info
+		      component: Info,
+		       meta:{
+				    requireLogin:true,
+				  }
 		    },
 		    {
 		      path: 'Vuex/:id',
@@ -95,6 +100,16 @@ export default new Router({
 		      name: 'Cookie',
 		      component: Cookie
 		    },
+		    {
+		      path: 'Scroll/:id',
+		      name: 'Scroll',
+		      component: Scroll
+		    },
+		    {
+		      path: 'Delect/:id',
+		      name: 'Delect',
+		      component: Delect
+		    },
       	{
 		      path:'*',
 		    	name:'Error',
@@ -102,7 +117,7 @@ export default new Router({
 		    }
       ]
     }
-  ],
+  ],    
   //此为强制性的使新页面滚顶到顶部
   scrollBehavior (to, from, savedPosition) {
 	  return { x: 0, y: 0 }

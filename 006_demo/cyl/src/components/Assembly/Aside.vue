@@ -30,7 +30,7 @@
 				</router-link>
 			</div>
 			<div class="title">
-				常用功能
+				技术点
 			</div>
 			<div class="content">
 				<router-link to='/View/Assemb/001' class='vue_a'>

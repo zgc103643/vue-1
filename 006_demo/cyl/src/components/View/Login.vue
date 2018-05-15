@@ -70,6 +70,9 @@
 					this.isBool = true;
 					return false;
 				}
+				//更改状态值
+				this.$store.commit('changeLogin','1');
+				
 				window.location.href = '/';
 			},
 			hideMask:function () {

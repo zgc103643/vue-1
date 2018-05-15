@@ -16,7 +16,6 @@
 		mounted:function(){
 			var isBool = document.querySelector('.hide'),
 				isTitle = document.querySelector('.view_title');
-			console.log(isBool.innerText)
 			if (isBool.innerText == '03') {
 				isTitle.innerText = 'Axios'
 			}

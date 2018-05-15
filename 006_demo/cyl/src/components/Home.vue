@@ -33,7 +33,7 @@
 				    	<div class="info"><span>GitHub</span> : https://github.com/cyl0430</div>
 				    </el-tab-pane>
 				    <el-tab-pane label="专业技术" name="second">专业技术</el-tab-pane>
-				    <el-tab-pane label="项目管理" name="third">项目管理</el-tab-pane>
+				    <el-tab-pane label="项目管理" name="third"></el-tab-pane>
 				  </el-tabs>
 				</template>
     	</div>
