@@ -16,6 +16,24 @@
 				<router-link to='/View/Product/pro'>
 					<el-button type="primary" class='btnObj'>JS控制页面跳转</el-button>
 				</router-link>
+				<router-link to='/View/404'>
+					<el-button type="primary" class='btnObj'>配置 404 页面</el-button>
+				</router-link>
+				<router-link to='/View/Assemb/001'>
+					<el-button type="primary" class='btnObj'>引入自定义组件</el-button>
+				</router-link>
+				<router-link to='/View/Layer/002'>
+					<el-button type="primary" class='btnObj'>两个页面之间的传值,如 弹窗</el-button>
+				</router-link>
+				<router-link to='/View/Watch/003'>
+					<el-button type="primary" class='btnObj'>初始化判断 watch监听</el-button>
+				</router-link>
+				<router-link to='/View/Time/004'>
+					<el-button type="primary" class='btnObj'>倒计时</el-button>
+				</router-link>
+				<router-link to='/View/Cookie/005'>
+					<el-button type="primary" class='btnObj'>cookie</el-button>
+				</router-link>
 			</div>
 		</div>
 	</div>

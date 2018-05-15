@@ -25,29 +25,6 @@
 				<router-link to='/View/Vuex/04' class='vue_a'>
 					<div class="rowObj">安装 vuex 环境</div>
 				</router-link>
-				<router-link to='/View/404' class='vue_a'>
-					<div class="rowObj">配置 404 页面</div>
-				</router-link>
-			</div>
-			<div class="title">
-				技术点
-			</div>
-			<div class="content">
-				<router-link to='/View/Assemb/001' class='vue_a'>
-					<div class="rowObj">引入自定义组件</div>
-				</router-link>
-				<router-link to='/View/Layer/002' class='vue_a'>
-					<div class="rowObj">两个页面之间的传值,如 弹窗</div>
-				</router-link>
-				<router-link to='/View/Watch/003' class='vue_a'>
-					<div class="rowObj">初始化判断 watch监听</div>
-				</router-link>
-				<router-link to='/View/Time/004' class='vue_a'>
-					<div class="rowObj">倒计时</div>
-				</router-link>
-				<router-link to='/View/Cookie/005' class='vue_a'>
-					<div class="rowObj">cookie</div>
-				</router-link>
 			</div>
 		</div>
 	</div>
