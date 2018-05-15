@@ -73,7 +73,10 @@
 				//更改状态值
 				this.$store.commit('changeLogin','1');
 				
-				window.location.href = '/';
+				//成功提交后跳转到首页
+				this.$router.push({
+					name:'Home'
+				})
 			},
 			hideMask:function () {
 			  	this.isBool = false;

@@ -27,13 +27,25 @@
     		<template>
 				  <el-tabs v-model="activeName">
 				    <el-tab-pane label="简介" name="first">
-				    	<div class="info"><span>姓名</span> : jscyl</div>
-				    	<div class="info"><span>联系方式</span> : 13849007907</div>
-				    	<div class="info"><span>邮箱</span> : 13849007907@163.com</div>
-				    	<div class="info"><span>GitHub</span> : https://github.com/cyl0430</div>
+				    	<div class="info">
+				    		<span>姓名 :</span>
+				    		jscyl
+				    	</div>
+				    	<div class="info">
+				    		<span>电话 :</span>
+				    		138 - 4900 - 7907
+				    	</div>
+				    	<div class="info">
+				    		<span>邮箱 :</span>
+				    		13849007907@163.com
+				    	</div>
+				    	<div class="info">
+				    		<span>GitHub :</span>
+				    		https://github.com/cyl0430
+				    	</div>
 				    </el-tab-pane>
-				    <el-tab-pane label="专业技术" name="second">专业技术</el-tab-pane>
-				    <el-tab-pane label="项目管理" name="third"></el-tab-pane>
+				    <el-tab-pane label="专业技能" name="second">B</el-tab-pane>
+				    <el-tab-pane label="项目管理" name="third">C</el-tab-pane>
 				  </el-tabs>
 				</template>
     	</div>
