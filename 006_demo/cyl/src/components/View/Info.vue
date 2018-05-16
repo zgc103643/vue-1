@@ -34,6 +34,9 @@
 				<router-link to='/View/Cookie/005'>
 					<el-button type="primary" class='btnObj'>cookie</el-button>
 				</router-link>
+				<router-link to='/View/Tab/006'>
+					<el-button type="primary" class='btnObj'>自定义 tab 标签</el-button>
+				</router-link>
 			</div>
 		</div>
 	</div>

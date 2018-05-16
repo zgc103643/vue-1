@@ -41,39 +41,25 @@
 				    	</div>
 				    	<div class="info">
 				    		<span>GitHub :</span>
-				    		https://github.com/cyl0430
+				    		<a href="https://github.com/cyl0430" class="vue_a" style="font-weight: normal;" target="_blank">
+				    			github.com/cyl0430
+				    		</a>
 				    	</div>
 				    </el-tab-pane>
-				    <el-tab-pane label="专业技能" name="second">
-				    	<div class="info">
-				    		掌握grunt和vue搭建项目框架,配置sass/自动监听/代码压缩的环境
-				    	</div>
-				    	<div class="info">
-				    		掌握ajax数据交互和dom渲染页面
-				    	</div>
-				    	<div class="info">
-				    		熟练运用JQ，bootstrap，layer等优化代码
-				    	</div>
-				    	<div class="info">
-				    		能根据项目的实际需求封装插件
-				    	</div>
-				    	<div class="info">
-				    		掌握响应式开发，调试页面兼容 ，ps切图
-				    	</div>
-				    	<div class="info">
-				    		掌握cdn预加载,雪碧图等优化代码的方法
-				    	</div>
-				    	<div class="info">
-				    		掌握SVN和github的代码管理
-				    	</div>
+				    <el-tab-pane label="专业技能" name="second" class='cyl'>
+				    	<ul class="link">
+								<li class="item">1.掌握<span class="bold">grunt</span>配置sass/watch/uglify等环境</li>
+								<li class="item">2.掌握<span class="bold">ajax</span>数据交互,渲染页面</li>
+								<li class="item">3.熟练运用JQ，bootstrap，layer等框架</li>
+								<li class="item">4.能根据项目的实际需求<span class="bold">封装插件</span></li>
+								<li class="item">5.掌握响应式开发，调试页面兼容 ，ps切图</li>
+								<li class="item">6.掌握<span class="bold">SVN</span>和<span class="bold">GitHub</span></li>
+								<li class="item">7.掌握基本<span class="bold">ES6</span>语法,配置babel转化环境</li>
+								<li class="item">8.掌握<span class="bold">Vue</span>,配置sass/axios等环境</li>
+							</ul>
 				    </el-tab-pane>
 				    <el-tab-pane label="项目管理" name="third">
 				    	<div class="info">
-				    		<a href="https://www.oujuhui.com/" class="vue_a" target="_blank">
-				    			<div class="info">
-						    		<span>oujuhui.com</span>
-						    	</div>
-				    		</a>
 				    		<a href="http://eurooomall.top/" class="vue_a" target="_blank">
 				    			<div class="info">
 						    		<span>eurooo.top</span>
@@ -167,7 +153,6 @@
 				}
 			}
 			.tab{
-				border-bottom: 1px solid #CCCCCC;
 				padding-bottom: 20px;
 				.el-tabs__nav{
 					width: 100%;
@@ -190,6 +175,30 @@
 						color: black;
 						font-size: 16px;
 						font-weight: 600;
+					}
+				}
+				.cyl{
+					.link{
+						padding-left: 15px;
+						list-style-type: none;
+						.item{
+							color: #000000;
+							padding-bottom: 15px;
+							._web{
+								color: #000000;
+							}
+							.bold{
+								padding-left: 5px;
+								padding-right: 5px;
+								font-weight: 600;
+								font-size: 16px;
+								color:#409EFF ;
+								text-transform: capitalize;
+							}
+							&:first-child{
+								padding-top: 15px;
+							}
+						}
 					}
 				}
 			}

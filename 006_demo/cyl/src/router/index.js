@@ -21,6 +21,7 @@ import Delect from '@/components/View/Delect'
 import Product from '@/components/View/Product'
 import Order from '@/components/View/Order'
 import Collection from '@/components/View/Collection'
+import Tab from '@/components/View/Tab'
 
 //下面是需要登陆方可进入的
 import Info from '@/components/View/Info'
@@ -127,6 +128,11 @@ export default new Router({
 		      path: 'Collection/:id',
 		      name: 'Collection',
 		      component: Collection
+		    },
+		    {
+		      path: 'Tab/:id',
+		      name: 'Tab',
+		      component: Tab
 		    },
       	{
 		      path:'*',
